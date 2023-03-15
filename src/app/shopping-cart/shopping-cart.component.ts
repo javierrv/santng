@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./shopping-cart.component.sass']
 })
 export class ShoppingCartComponent {
-
+  onAdd() {
+    alert('onAdd');
+  }
 }
