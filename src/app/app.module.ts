@@ -9,6 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ItemCardComponent } from './item-card/item-card.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ItemCardComponent } from './item-card/item-card.component';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
