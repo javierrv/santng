@@ -11,12 +11,16 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ItemCardComponent } from './item-card/item-card.component';
 import { MatCardModule } from '@angular/material/card';
 
+import { FilterPipe }  from './filter.pipe';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     ShoppingCartComponent,
     ProductListComponent,
     ItemCardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,8 @@ import { MatCardModule } from '@angular/material/card';
     BrowserAnimationsModule,
     MatButtonModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
