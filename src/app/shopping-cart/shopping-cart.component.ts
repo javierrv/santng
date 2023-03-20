@@ -8,10 +8,6 @@ import { ProductListComponent } from '../product-list/product-list.component';
   styleUrls: ['./shopping-cart.component.sass']
 })
 export class ShoppingCartComponent {
-  onAdd() {
-    alert('onAdd');
-  }
-
   constructor(public dialog: MatDialog) {}
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
