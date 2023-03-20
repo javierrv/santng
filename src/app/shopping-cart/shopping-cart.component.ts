@@ -16,7 +16,8 @@ export class ShoppingCartComponent {
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(ProductListComponent, {
-      width: '250px',
+      width: '60%',
+      height: '60%',
       enterAnimationDuration,
       exitAnimationDuration,
     });
