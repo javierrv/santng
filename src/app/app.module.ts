@@ -3,16 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
+
+// custom modules
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ItemCardComponent } from './item-card/item-card.component';
+
+// angular material modules
+import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatDialogModule } from '@angular/material/dialog';
+
+import { FormsModule } from '@angular/forms';
 
 import { FilterPipe }  from './filter.pipe';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,8 +32,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatDialogModule,
     MatCardModule,
+    MatDialogModule,
     FormsModule
   ],
   providers: [],
