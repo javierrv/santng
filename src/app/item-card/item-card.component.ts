@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Item } from '../items';
 
 @Component({
   selector: 'app-item-card',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./item-card.component.sass']
 })
 export class ItemCardComponent {
-
+  @Input() item: Item = { title: 'default', description: 'default' };
 }
