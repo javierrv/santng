@@ -1,10 +1,10 @@
 <h1 mat-dialog-title>Add product</h1>
 
-<!-- mat-form-field style="width: 100%" floatLabel='never' -->
-  <input matInput [(ngModel)]="searchText" placeholder="Search" autocomplete="off">
-<!-- /mat-form-field -->
-
 <div mat-dialog-content>
+  <mat-form-field style="width: 50%">
+    <input matInput [(ngModel)]="searchText" placeholder="Search" autocomplete="off">
+  </mat-form-field>
+  
   <a *ngFor="let item of products | filter: searchText" (click)="selectItem(item);">
   <ul>
     <li>
