@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
 
 import { Item, products} from '../items';
 
@@ -9,7 +8,6 @@ import { Item, products} from '../items';
   styleUrls: ['./product-list.component.sass']
 })
 export class ProductListComponent implements OnInit {
-  constructor(public dialogRef: MatDialogRef<ProductListComponent>) {}
 
   searchText = '';
   products: Array<Item> = products;
