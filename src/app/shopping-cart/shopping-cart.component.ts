@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductListComponent } from '../product-list/product-list.component';
 
@@ -8,6 +8,8 @@ import { ProductListComponent } from '../product-list/product-list.component';
   styleUrls: ['./shopping-cart.component.sass']
 })
 export class ShoppingCartComponent {
+  @Input() cartItems: string[] = [];
+  
   constructor(public dialog: MatDialog) {}
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {

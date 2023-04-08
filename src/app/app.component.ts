@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
+  cartItems: string[] = [];
   title = 'point_of_sale';
+
+  addToCart(item: string) {
+    this.cartItems.push(item);
+  }
 }
