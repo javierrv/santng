@@ -1,3 +1,11 @@
 <router-outlet></router-outlet>
-<app-shopping-cart [cartItems]="cartItems"></app-shopping-cart>
-<app-product-list (emitter)="addToCart($event)"></app-product-list>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-6">
+            <app-shopping-cart [cartItems]="cartItems"></app-shopping-cart>
+        </div>
+        <div class="col-6">
+            <app-product-list (emitter)="addToCart($event)"></app-product-list>
+        </div>
+    </div>
+</div>
