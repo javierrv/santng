@@ -2,7 +2,12 @@
 
 <button mat-raised-button (click)="openDialog('500ms', '500ms')">Add product</button>
 <div>
-    <a *ngFor="let item of cartItems">
-        <label>{{item}}</label>
-    </a>
+    <ul class="list-group">
+        <a *ngFor="let item of cartItems">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{item}}
+            <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+        </a>
+    </ul>
 </div>
