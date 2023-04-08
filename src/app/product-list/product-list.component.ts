@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { Item, products} from '../items';
 
@@ -9,15 +8,16 @@ import { Item, products} from '../items';
   styleUrls: ['./product-list.component.sass']
 })
 export class ProductListComponent implements OnInit {
-  constructor(public dialogRef: MatDialogRef<ProductListComponent>) {}
 
   searchText = '';
   products: Array<Item> = products;
+  @Output() emitter: EventEmitter <any> = new EventEmitter();
 
   ngOnInit() {
   }
 
   selectItem(item: Item) {
+    this.emitter.emit(item.title);
     console.log(`The selected item is: ${item.title}`);
   }
 }
