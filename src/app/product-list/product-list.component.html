@@ -1,18 +1,17 @@
 <h1>Add product</h1>
 
-<div>
+<div style="height:80vh;" class="overflow-auto">
   <mat-form-field style="width: 50%">
     <input matInput [(ngModel)]="searchText" placeholder="Search" autocomplete="off">
   </mat-form-field>
   
-  <a *ngFor="let item of products | filter: searchText">
-  <ul>
-    <li>
-    <!-- li *ngFor="let item of products; index as i; first as isFirst" -->
-      <app-item-card (itemCardEmitter)="selectItem($event)" [item]="item"></app-item-card>
-    </li>
-  </ul>
-  </a>
+  <div class="row">
+    <div class="col-4" *ngFor="let item of products | filter: searchText">
+      <!-- li *ngFor="let item of products; index as i; first as isFirst" -->
+        <app-item-card (itemCardEmitter)="selectItem($event)" [item]="item"></app-item-card>
+    </div>
+  </div>
+  
 </div>
 
 <div>
