@@ -7,7 +7,7 @@ import { Item } from '../items';
   styleUrls: ['./item-card.component.sass']
 })
 export class ItemCardComponent {
-  @Input() item: Item = { title: 'default', description: 'default' };
+  @Input() item: Item = { title: 'default', description: 'default', price: 0 };
   @Output() itemCardEmitter: EventEmitter <Item> = new EventEmitter();
 
   addItemToCart(item: Item) {
