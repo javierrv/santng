@@ -11,6 +11,6 @@ export class AppComponent {
   title = 'point_of_sale';
 
   addToCart(item: Item) {
-    this.cartItems.push(item);
+    this.cartItems = [...this.cartItems, item];
   }
 }
