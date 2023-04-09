@@ -11,6 +11,12 @@ export class AppComponent {
   title = 'point_of_sale';
 
   addToCart(item: Item) {
-    this.cartItems = [...this.cartItems, item];
+    const exists = this.cartItems.some((elem) => {
+      return elem.title === item.title
+    });
+    
+    if (!exists) {
+      this.cartItems = [...this.cartItems, item];  
+    }
   }
 }
