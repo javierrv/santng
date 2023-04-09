@@ -5,11 +5,11 @@
     <input matInput [(ngModel)]="searchText" placeholder="Search" autocomplete="off">
   </mat-form-field>
   
-  <a *ngFor="let item of products | filter: searchText" (click)="selectItem(item);">
+  <a *ngFor="let item of products | filter: searchText">
   <ul>
     <li>
     <!-- li *ngFor="let item of products; index as i; first as isFirst" -->
-      <app-item-card [item]="item"></app-item-card>
+      <app-item-card (itemCardEmitter)="selectItem($event)" [item]="item"></app-item-card>
     </li>
   </ul>
   </a>

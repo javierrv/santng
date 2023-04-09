@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Item } from './items';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  cartItems: string[] = [];
+  cartItems: Item[] = [];
   title = 'point_of_sale';
 
-  addToCart(item: string) {
+  addToCart(item: Item) {
     this.cartItems.push(item);
   }
 }

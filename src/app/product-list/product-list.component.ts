@@ -11,13 +11,11 @@ export class ProductListComponent implements OnInit {
 
   searchText = '';
   products: Array<Item> = products;
-  @Output() emitter: EventEmitter <any> = new EventEmitter();
+  @Output() emitterProductList: EventEmitter <Item> = new EventEmitter();
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   selectItem(item: Item) {
-    this.emitter.emit(item.title);
-    console.log(`The selected item is: ${item.title}`);
+    this.emitterProductList.emit(item);
   }
 }

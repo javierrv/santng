@@ -5,7 +5,7 @@
             <app-shopping-cart [cartItems]="cartItems"></app-shopping-cart>
         </div>
         <div class="col-6">
-            <app-product-list (emitter)="addToCart($event)"></app-product-list>
+            <app-product-list (emitterProductList)="addToCart($event)"></app-product-list>
         </div>
     </div>
 </div>
