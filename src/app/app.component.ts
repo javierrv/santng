@@ -28,4 +28,13 @@ export class AppComponent {
     
     this.cartItems = [...this.cartItems];
   }
+
+  removeItem(item: Item) {
+    const itemIndex = this.cartItems.findIndex(elem => {
+      return elem.title === item.title;
+    });
+    this.cartItems.splice(itemIndex, 1);
+    
+    this.cartItems = [...this.cartItems];
+  }
 }

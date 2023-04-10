@@ -11,6 +11,7 @@ import { ProductListComponent } from '../product-list/product-list.component';
 export class ShoppingCartComponent implements OnChanges {
   @Input() cartItems: Item[] = [];
   @Output() emitterShoppingCart: EventEmitter <any> = new EventEmitter();
+  @Output() emitterRemoveItem: EventEmitter <any> = new EventEmitter();
   total: number = 0;
   
   constructor(public dialog: MatDialog) {}
@@ -22,8 +23,12 @@ export class ShoppingCartComponent implements OnChanges {
   }
 
   subtrackQuantity(item: Item) {
-    item.quantity--;
-    this.emitterShoppingCart.emit(item);
+    if (item.quantity - 1 === 0) {
+      this.emitterRemoveItem.emit(item);
+    } else {
+      item.quantity--;
+      this.emitterShoppingCart.emit(item);
+    }
   }
 
   addQuantity(item: Item) {
