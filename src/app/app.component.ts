@@ -16,7 +16,16 @@ export class AppComponent {
     });
     
     if (!exists) {
-      this.cartItems = [...this.cartItems, item];  
+      this.cartItems = [...this.cartItems, item];
     }
+  }
+
+  updateCart(item: Item) {
+    const itemIndex = this.cartItems.findIndex(elem => {
+      return elem.title === item.title;
+    });
+    this.cartItems[itemIndex] = item;
+    
+    this.cartItems = [...this.cartItems];
   }
 }
