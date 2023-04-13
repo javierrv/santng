@@ -6,10 +6,13 @@
     <ul class="list-group">
         <li *ngFor="let item of cartItems"
         class="list-group-item d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary rounded-pill">{{item.quantity}}</span>
             {{item.title}}
-        <i (click)="subtrackQuantity(item)" class="bi bi-dash"></i>
-        <span class="badge bg-primary rounded-pill">{{item.quantity}}</span>
-        <i (click)="addQuantity(item)" class="bi bi-plus"></i>
+            <small>${{item.price}}</small>
+            <span>
+                <i (click)="subtrackQuantity(item)" class="bi bi-dash"></i>
+                <i (click)="addQuantity(item)" class="bi bi-plus"></i>
+            </span>
         </li>
     </ul>
 </div>
