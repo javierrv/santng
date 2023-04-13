@@ -37,4 +37,8 @@ export class AppComponent {
     
     this.cartItems = [...this.cartItems];
   }
+
+  clearCart() {
+    this.cartItems = [];
+  }
 }

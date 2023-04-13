@@ -12,6 +12,7 @@ export class ShoppingCartComponent implements OnChanges {
   @Input() cartItems: Item[] = [];
   @Output() emitterShoppingCart: EventEmitter <any> = new EventEmitter();
   @Output() emitterRemoveItem: EventEmitter <any> = new EventEmitter();
+  @Output() emitterClearCart: EventEmitter <any> = new EventEmitter();
   total: number = 0;
   
   constructor(public dialog: MatDialog) {}
@@ -34,6 +35,10 @@ export class ShoppingCartComponent implements OnChanges {
   addQuantity(item: Item) {
     item.quantity++;
     this.emitterShoppingCart.emit(item);
+  }
+
+  clearCart() {
+    this.emitterClearCart.emit();
   }
 
   openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
