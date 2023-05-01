@@ -39,6 +39,10 @@ export class AppComponent {
   }
 
   clearCart() {
+    // workaround to reset quantities after clear
+    this.cartItems.forEach(elem => {
+      elem.quantity = 1;
+    });
     this.cartItems = [];
   }
 }
