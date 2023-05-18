@@ -16,6 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list'; 
 
 import { FormsModule } from '@angular/forms';
 
@@ -38,6 +39,7 @@ import { FilterPipe }  from './filter.pipe';
     MatDialogModule,
     MatGridListModule,
     MatInputModule,
+    MatListModule,
     FormsModule
   ],
   providers: [],
