@@ -1,7 +1,7 @@
 <router-outlet>
 </router-outlet>
 
-<mat-grid-list cols="2" rowHeight="2:1">
+<mat-grid-list cols="2" rowHeight="1:1">
     <mat-grid-tile>
         <app-shopping-cart 
             (emitterRemoveItem)="removeItem($event)" 
@@ -10,13 +10,7 @@
         </app-shopping-cart>
     </mat-grid-tile>
     <mat-grid-tile>
-        <app-product-list (emitterProductList)="addToCart($event)">
+        <app-product-list style="width:100%" (emitterProductList)="addToCart($event)" >
         </app-product-list>
-    </mat-grid-tile>
-    <mat-grid-tile>
-        3
-    </mat-grid-tile>
-    <mat-grid-tile>
-        4
     </mat-grid-tile>
 </mat-grid-list>
