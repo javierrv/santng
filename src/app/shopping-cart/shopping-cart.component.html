@@ -1,26 +1,18 @@
-<h2>Shopping-cart</h2>
+<div>
+    <h2>Shopping-cart</h2>
 
-<!-- button mat-raised-button (click)="openDialog('500ms', '500ms')">Add product</button -->
-
-<mat-list role="list">
-    <mat-list-item role="listitem" *ngFor="let item of cartItems">
-        <span class="badge bg-primary rounded-pill">{{item.quantity}}</span>
-        {{item.title}}
-        <small>${{item.price}}</small>
-        <span>
-            <i (click)="subtrackQuantity(item)" class="bi bi-dash"></i>
-            <i (click)="addQuantity(item)" class="bi bi-plus"></i>
-        </span>
-    </mat-list-item>
-</mat-list>
-<div class="row">
-    <div class="col-1">
-        <i class="bi bi-trash" (click)="clearCart()"></i>
-    </div>
-</div>
-<div class="row">
+    <mat-list role="list" style="height:50vh;">
+        <mat-list-item role="listitem" *ngFor="let item of cartItems">
+            <span>{{item.quantity}}</span>
+            {{item.title}}
+            <small>${{item.price}}</small>
+            <span>
+                <button mat-raised-button (click)="subtrackQuantity(item)">-</button>
+                <button mat-raised-button (click)="addQuantity(item)">+</button>
+            </span>
+        </mat-list-item>
+    </mat-list>
+    <button mat-raised-button (click)="clearCart()">Clear</button>
     <h3>Total: $ {{total}}</h3>
-</div>
-<div class="row">
-    <button type="button" class="btn btn-primary">Submit</button>
+    <button mat-raised-button>Submit</button>
 </div>
