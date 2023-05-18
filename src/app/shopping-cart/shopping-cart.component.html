@@ -2,20 +2,17 @@
 
 <!-- button mat-raised-button (click)="openDialog('500ms', '500ms')">Add product</button -->
 
-<div style="height:70vh;" class="shadow-none p-3 mb-5 bg-body-tertiary rounded overflow-auto">
-    <ul class="list-group">
-        <li *ngFor="let item of cartItems"
-        class="list-group-item d-flex justify-content-between align-items-center">
-            <span class="badge bg-primary rounded-pill">{{item.quantity}}</span>
-            {{item.title}}
-            <small>${{item.price}}</small>
-            <span>
-                <i (click)="subtrackQuantity(item)" class="bi bi-dash"></i>
-                <i (click)="addQuantity(item)" class="bi bi-plus"></i>
-            </span>
-        </li>
-    </ul>
-</div>
+<mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let item of cartItems">
+        <span class="badge bg-primary rounded-pill">{{item.quantity}}</span>
+        {{item.title}}
+        <small>${{item.price}}</small>
+        <span>
+            <i (click)="subtrackQuantity(item)" class="bi bi-dash"></i>
+            <i (click)="addQuantity(item)" class="bi bi-plus"></i>
+        </span>
+    </mat-list-item>
+</mat-list>
 <div class="row">
     <div class="col-1">
         <i class="bi bi-trash" (click)="clearCart()"></i>
