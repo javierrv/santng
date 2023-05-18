@@ -14,6 +14,7 @@ import { ItemCardComponent } from './item-card/item-card.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 
 import { FormsModule } from '@angular/forms';
@@ -35,6 +36,7 @@ import { FilterPipe }  from './filter.pipe';
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
+    MatGridListModule,
     MatInputModule,
     FormsModule
   ],
