@@ -1,18 +1,13 @@
-<!-- mat-card>
+<mat-card class="example-card" style="border: solid 1px #000000de;">
     <mat-card-header>
         <mat-card-title>{{item.title}}</mat-card-title>
-        <mat-card-subtitle>{{item.description}}</mat-card-subtitle>
+        <!-- mat-card-subtitle>{{item.description}}</mat-card-subtitle -->
     </mat-card-header>
+    <img mat-card-image src="../../assets/image_placeholder.png" alt="Photo Sample">
+    <!--mat-card-content>
+        Some content
+    </mat-card-content -->
     <mat-card-actions>
-        <button mat-button (click)="addItemToCart(item)">Add to cart</button>
+        <button mat-raised-button (click)="addItemToCart(item)">Add to cart</button>
     </mat-card-actions>
-</mat-card -->
-
-<div class="card" style="width: 13rem; margin-bottom: 1rem;">
-    <img src="../../assets/image_placeholder.png" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">{{item.title}}</h5>
-      <p class="card-text">{{item.description}}</p>
-      <a href="#" class="btn btn-primary" (click)="addItemToCart(item)">Add to cart</a>
-    </div>
-</div>
+</mat-card>
