@@ -1,15 +1,11 @@
 <div>
   <h2>Products Catalog</h2>
-
-  <div>
     <mat-form-field class="search-field">
       <input matInput [(ngModel)]="searchText" placeholder="Search" autocomplete="off">
     </mat-form-field>
-
     <div class="product-list-area">
       <div class="product-list-area-item" *ngFor="let item of products | filter: searchText">
           <app-item-card (itemCardEmitter)="selectItem($event)" [item]="item"></app-item-card>
       </div>
     </div>
-  </div>
 </div>
