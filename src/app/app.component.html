@@ -3,14 +3,14 @@
 
 <mat-grid-list cols="2" rowHeight="1:1">
     <mat-grid-tile>
-        <app-shopping-cart 
+        <app-shopping-cart class="mat-grid-tile-dashboard"
             (emitterRemoveItem)="removeItem($event)" 
             (emitterShoppingCart)="updateCart($event)" 
             (emitterClearCart)="clearCart()" [cartItems]="cartItems">
         </app-shopping-cart>
     </mat-grid-tile>
     <mat-grid-tile>
-        <app-product-list style="width:100%" (emitterProductList)="addToCart($event)" >
+        <app-product-list class="mat-grid-tile-dashboard" style="width:100%" (emitterProductList)="addToCart($event)" >
         </app-product-list>
     </mat-grid-tile>
 </mat-grid-list>
