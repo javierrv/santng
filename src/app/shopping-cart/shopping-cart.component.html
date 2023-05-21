@@ -1,16 +1,16 @@
 <div>
     <h2>Shopping-cart</h2>
-    <mat-list role="list" style="height:400px;overflow-y:auto;background-color:#f2f2f2;">
+    <mat-list role="list" style="height:400px;width:450px;overflow-y:auto;background-color:whitesmoke;">
         <mat-list-item id="shopping-list-container" role="listitem" *ngFor="let item of cartItems">
             <div>
                 <span class="demo-section list-item">{{item.title}}</span>
-                <span class="list-item">{{item.quantity}}</span>
+                <span class="list-item"><small>{{item.quantity}}</small></span>
                 <span class="list-item"><small>${{item.price}}</small></span>
                 <span class="list-item">
-                    <button mat-flat-button (click)="subtrackQuantity(item)" aria-label="Subtrack">
+                    <button mat-flat class="list-item-button" (click)="subtrackQuantity(item)" aria-label="Subtrack">
                         <mat-icon>remove</mat-icon>
                     </button>
-                    <button mat-flat-button (click)="addQuantity(item)" aria-label="Add">
+                    <button mat-flat class="list-item-button" (click)="addQuantity(item)" aria-label="Add">
                         <mat-icon>add</mat-icon>
                     </button>
                 </span>
@@ -19,8 +19,8 @@
         </mat-list-item>
     </mat-list>
     <div>
-        <button mat-raised-button (click)="clearCart()">Clear</button>
+        <mat-icon (click)="clearCart()">delete</mat-icon>
         <h3>Total: $ {{total}}</h3>
-        <button mat-raised-button>Submit</button>
+        <button mat-raised-button color="primary">Submit</button>
     </div>
 </div>
