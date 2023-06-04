@@ -1,12 +1,14 @@
 <h1 mat-dialog-title>Payment</h1>
 <div mat-dialog-content>
-  Total {{data}}
+  <div>
+    <mat-label>Sale Amount {{data}}</mat-label>
+  </div>
   <mat-form-field>
-    <mat-label>Efectivo</mat-label>
-    <input matInput [(ngModel)]="cambio">
+    <mat-label>Cash</mat-label>
+    <input matInput [(ngModel)]="amountTendered">
   </mat-form-field>
+  <mat-label>{{changeDue}}</mat-label>
 </div>
-
 <div mat-dialog-actions>
   <button mat-button mat-dialog-close>Cancel</button>
   <button mat-button (click)="pay(data)" cdkFocusInitial>Pay</button>
