@@ -20,7 +20,7 @@ export class ShoppingCartComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.total = changes['cartItems'].currentValue.reduce((acc: any, curr: any) => {
-      return acc + (curr.price * curr.quantity);
+      return acc + (curr.unitPrice * curr.quantity);
     }, 0);
   }
 
