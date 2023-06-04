@@ -11,7 +11,7 @@ import { PaymentComponent } from '../payment/payment.component';
 })
 export class ShoppingCartComponent implements OnChanges {
   @Input() cartItems: ItemShoppingList[] = [];
-  @Output() emitterShoppingCart: EventEmitter <any> = new EventEmitter();
+  @Output() emitterUpdateCart: EventEmitter <any> = new EventEmitter();
   @Output() emitterRemoveItem: EventEmitter <any> = new EventEmitter();
   @Output() emitterClearCart: EventEmitter <any> = new EventEmitter();
   total: number = 0;
@@ -30,14 +30,14 @@ export class ShoppingCartComponent implements OnChanges {
     } else {
       item.quantity--;
       item.totalPrice = item.unitPrice * item.quantity;
-      this.emitterShoppingCart.emit(item);
+      this.emitterUpdateCart.emit(item);
     }
   }
 
   addQuantity(item: ItemShoppingList) {
     item.quantity++;
     item.totalPrice = item.unitPrice * item.quantity;
-    this.emitterShoppingCart.emit(item);
+    this.emitterUpdateCart.emit(item);
   }
 
   clearCart() {

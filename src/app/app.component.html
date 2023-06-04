@@ -5,7 +5,7 @@
     <mat-grid-tile>
         <app-shopping-cart class="mat-grid-tile-dashboard"
             (emitterRemoveItem)="removeItem($event)" 
-            (emitterShoppingCart)="updateCart($event)" 
+            (emitterUpdateCart)="updateCart($event)" 
             (emitterClearCart)="clearCart()" [cartItems]="cartItems">
         </app-shopping-cart>
     </mat-grid-tile>
