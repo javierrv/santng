@@ -1,10 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-interface DialogData {
-  total: string
-}
-
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -16,9 +12,9 @@ export class PaymentComponent {
   changeDue: number = 0;
 
   constructor(public dialogRef: MatDialogRef<PaymentComponent>, 
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: number) {}
 
-  pay(data: any) {
-    this.changeDue = this.amountTendered - Number(data);
+  pay(data: number) {
+    this.changeDue = this.amountTendered - data;
   }
 }
