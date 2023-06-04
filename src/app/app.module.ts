@@ -22,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 
 import { FilterPipe }  from './filter.pipe';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FilterPipe }  from './filter.pipe';
     ShoppingCartComponent,
     ProductListComponent,
     ItemCardComponent,
-    FilterPipe
+    FilterPipe,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
