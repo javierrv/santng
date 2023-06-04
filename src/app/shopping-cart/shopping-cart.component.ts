@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Item } from '../items';
+import { ItemShoppingList } from '../app.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { PaymentComponent } from '../payment/payment.component';
 
@@ -10,7 +10,7 @@ import { PaymentComponent } from '../payment/payment.component';
   styleUrls: ['./shopping-cart.component.sass']
 })
 export class ShoppingCartComponent implements OnChanges {
-  @Input() cartItems: Item[] = [];
+  @Input() cartItems: ItemShoppingList[] = [];
   @Output() emitterShoppingCart: EventEmitter <any> = new EventEmitter();
   @Output() emitterRemoveItem: EventEmitter <any> = new EventEmitter();
   @Output() emitterClearCart: EventEmitter <any> = new EventEmitter();
@@ -24,17 +24,19 @@ export class ShoppingCartComponent implements OnChanges {
     }, 0);
   }
 
-  subtrackQuantity(item: Item) {
+  subtrackQuantity(item: ItemShoppingList) {
     if (item.quantity - 1 === 0) {
       this.emitterRemoveItem.emit(item);
     } else {
       item.quantity--;
+      item.totalPrice = item.unitPrice * item.quantity;
       this.emitterShoppingCart.emit(item);
     }
   }
 
-  addQuantity(item: Item) {
+  addQuantity(item: ItemShoppingList) {
     item.quantity++;
+    item.totalPrice = item.unitPrice * item.quantity;
     this.emitterShoppingCart.emit(item);
   }
 
