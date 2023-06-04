@@ -14,11 +14,15 @@ import { ItemCardComponent } from './item-card/item-card.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
 import { FormsModule } from '@angular/forms';
 
 import { FilterPipe }  from './filter.pipe';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,8 @@ import { FilterPipe }  from './filter.pipe';
     ShoppingCartComponent,
     ProductListComponent,
     ItemCardComponent,
-    FilterPipe
+    FilterPipe,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,10 @@ import { FilterPipe }  from './filter.pipe';
     MatButtonModule,
     MatCardModule,
     MatDialogModule,
+    MatGridListModule,
+    MatIconModule,
     MatInputModule,
+    MatListModule,
     FormsModule
   ],
   providers: [],
