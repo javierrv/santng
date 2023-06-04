@@ -21,6 +21,6 @@
     <div>
         <mat-icon (click)="clearCart()">delete</mat-icon>
         <h3>Total: $ {{total}}</h3>
-        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="primary" (click)="openPaymentModal('0ms', '0ms')">Submit</button>
     </div>
 </div>
