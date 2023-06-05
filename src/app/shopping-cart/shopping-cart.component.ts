@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output, OnChanges, SimpleChanges } from
 import { MatDialog } from '@angular/material/dialog';
 import { Item } from '../items';
 import { ProductListComponent } from '../product-list/product-list.component';
+import { PaymentComponent } from '../payment/payment.component';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -47,6 +48,16 @@ export class ShoppingCartComponent implements OnChanges {
       height: '60%',
       enterAnimationDuration,
       exitAnimationDuration,
+    });
+  }
+
+  openPaymentModal(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(PaymentComponent, {
+      width: '400px',
+      height: '300px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: this.total
     });
   }
 }

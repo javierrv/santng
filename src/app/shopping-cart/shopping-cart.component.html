@@ -1,29 +1,26 @@
-<h2>Carrito de venta</h2>
-
-<!-- button mat-raised-button (click)="openDialog('500ms', '500ms')">Add product</button -->
-
-<div style="height:70vh;" class="shadow-none p-3 mb-5 bg-body-tertiary rounded overflow-auto">
-    <ul class="list-group">
-        <li *ngFor="let item of cartItems"
-        class="list-group-item d-flex justify-content-between align-items-center">
-            <span class="badge bg-primary rounded-pill">{{item.quantity}}</span>
-            {{item.title}}
-            <small>${{item.price}}</small>
-            <span>
-                <i (click)="subtrackQuantity(item)" class="bi bi-dash"></i>
-                <i (click)="addQuantity(item)" class="bi bi-plus"></i>
-            </span>
-        </li>
-    </ul>
-</div>
-<div class="row">
-    <div class="col-1">
-        <i class="bi bi-trash" (click)="clearCart()"></i>
+<div>
+    <h2>Shopping-cart</h2>
+    <mat-list role="list" style="height:400px;width:450px;overflow-y:auto;background-color:whitesmoke;">
+        <mat-list-item id="shopping-list-container" role="listitem" *ngFor="let item of cartItems">
+            <div>
+                <span class="demo-section list-item">{{item.title}}</span>
+                <span class="list-item"><small>{{item.quantity}}</small></span>
+                <span class="list-item"><small>${{item.price}}</small></span>
+                <span class="list-item">
+                    <button mat-flat class="list-item-button" (click)="subtrackQuantity(item)" aria-label="Subtrack">
+                        <mat-icon>remove</mat-icon>
+                    </button>
+                    <button mat-flat class="list-item-button" (click)="addQuantity(item)" aria-label="Add">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </span>
+                <mat-divider></mat-divider>
+            </div>
+        </mat-list-item>
+    </mat-list>
+    <div>
+        <mat-icon (click)="clearCart()">delete</mat-icon>
+        <h3>Total: $ {{total}}</h3>
+        <button mat-raised-button color="primary" (click)="openPaymentModal('0ms', '0ms')">Submit</button>
     </div>
-</div>
-<div class="row">
-    <h3>Total: $ {{total}}</h3>
-</div>
-<div class="row">
-    <button type="button" class="btn btn-primary">Submit</button>
 </div>
